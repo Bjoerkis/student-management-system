@@ -1,4 +1,4 @@
-#ADD STUDENT
+# ADD STUDENT
 http://localhost:8080/student-management-system/api/v1/students/new
 
 Json body:
@@ -11,7 +11,7 @@ Json body:
 }
 ```
 
-#UPDATE STUDENT
+# UPDATE STUDENT
 http://localhost:8080/student-management-system/api/v1/students/update/id
 
 *Lägg till det ID på den student som du önskar ändra*
@@ -26,17 +26,17 @@ Json body:
 }
 ```
 
-#FIND STUDENT(by Last name)
+# FIND STUDENT(by Last name)
 http://localhost:8080/student-management-system/api/v1/students/studentbylastname?lastName=Johnson
 
 *(Johnson är bara där som ett exempel, sätt in önskat namn vid din sökning)*
 
-#FIND STUDENT(by ID)
+# FIND STUDENT(by ID)
 http://localhost:8080/student-management-system/api/v1/students/1
 
 *(id är bara 1 som ett exempel, sätt in önskat id vid din sökning)*
 
-#DELETE STUDENT(by ID)
+# DELETE STUDENT(by ID)
 http://localhost:8080/student-management-system/api/v1/students/1
 
 *(id är bara 1 som ett exempel, sätt in önskat id vid din sökning)*
