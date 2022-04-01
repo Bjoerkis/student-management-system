@@ -2,9 +2,7 @@ package se.iths.service;
 
 
 import se.iths.entity.Student;
-import se.iths.exceptions.EmailException;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -42,14 +40,12 @@ public class StudentService {
         return entityManager.createQuery(query, Student.class).getResultList();
     }
 
-    public boolean EmailIsNotUnique(String email) {
-        List<String> emailAdresses = entityManager.createQuery("SELECT s.email FROM Student s", String.class).getResultList();
-        for (String emailInDatabase : emailAdresses) {
-            if (emailInDatabase.equalsIgnoreCase(email)) {
-                return true;
-            }
-        }
-        return false;
+    public boolean emailIsNotUnique(String email) {
+        String emailQuery = "SELECT s.email FROM Student s WHERE s.email = '" + email + "'";
+        List<String> emailResult = entityManager.createQuery(emailQuery, String.class).getResultList();
+
+        // if email is not unique returns true
+        return !emailResult.isEmpty();
     }
 
 }

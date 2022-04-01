@@ -29,7 +29,7 @@ public class StudentRest {
     @Path("new")
     @POST
     public Response addStudent(Student student) {
-        if (studentService.EmailIsNotUnique(student.getEmail())) {
+        if (studentService.emailIsNotUnique(student.getEmail())) {
             return Response.status(Response.Status.CONFLICT).entity("E-mail is already in the database.").type(MediaType.TEXT_PLAIN_TYPE).build();
         }
         try {
