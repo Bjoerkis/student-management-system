@@ -36,12 +36,12 @@ public class StudentService {
     }
 
     public List<Student> getStudentByLastName(String lastName) {
-        String query = "SELECT s FROM Student s WHERE s.lastName = '" + lastName + "'";
+        String query = "SELECT s FROM Student s WHERE s.lastName LIKE '" + lastName + "'";
         return entityManager.createQuery(query, Student.class).getResultList();
     }
 
     public boolean emailIsNotUnique(String email) {
-        String emailQuery = "SELECT s.email FROM Student s WHERE s.email = '" + email + "'";
+        String emailQuery = "SELECT s.email FROM Student s WHERE s.email LIKE '" + email + "'";
         List<String> emailResult = entityManager.createQuery(emailQuery, String.class).getResultList();
 
         // if email is not unique returns true
