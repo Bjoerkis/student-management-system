@@ -52,6 +52,7 @@ Json Body:
 ```
 # GET ALL INFO FROM SUBJECT
 http://localhost:8080/student-management-system/api/v1/subjects/search?subjectid=1
+
 *(id är bara 1 som ett exempel, sätt in önskat id)*
 
 # ADD TEACHER
